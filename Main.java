@@ -1,26 +1,23 @@
-import java.util.LinkedHashMap;
-import java.util.Map;
-
 public class Main{
     
-	static void printFindNextGreaterElementOutput(Map<Integer, Integer> output) {
+	static void printFindNextGreaterElementOutput(int numbers[], int output[]) {
 		System.out.println("Elemento      SEM");
-		for(Map.Entry<Integer, Integer> entry : output.entrySet()) {
-			System.out.println(entry.getKey() + "       -->       " + entry.getValue());	
+		for(int i = 0; i < numbers.length; i++) {
+			System.out.println(numbers[i] + "       -->       " + output[i]);	
 		}
 	}
 	
-    static Map<Integer, Integer> getNextGreaterElementOutput(int numbers[]) {
+    static int[] getNextGreaterElementOutput(int numbers[]) {
     	int arrayLength = numbers.length;
     	
-    	Map<Integer, Integer> output = new LinkedHashMap<Integer, Integer>();
-    	
+    	// Map<Integer, Integer> output = new LinkedHashMap<Integer, Integer>();
+    	int output[] = new int[numbers.length];
     	for (int i = 0;i < arrayLength; i++) {
-    		output.put(numbers[i], -1);
+    		output[i] = -1;
     		
     		for(int j = i + 1;j < arrayLength; j++) {
     			if (numbers[i] < numbers[j]) {
-    				output.put(numbers[i], numbers[j]);
+    				output[i] = numbers[j];
     				break;
     			}
     		}
@@ -32,10 +29,11 @@ public class Main{
     	// Ejemplo 1
     	int numbers[] = {4, 5, 2, 25};
     	
-    	// Ejemplo 2
+    	// EJemplo 2
     	// int numbers[] = {13, 7, 6, 12}; 
     	
-    	Map<Integer, Integer> output = getNextGreaterElementOutput(numbers);
-    	printFindNextGreaterElementOutput(output);
+    	int[] output = getNextGreaterElementOutput(numbers);
+    	long finish = System.nanoTime();
+    	printFindNextGreaterElementOutput(numbers, output);
     }
 }
