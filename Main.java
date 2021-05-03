@@ -33,7 +33,6 @@ public class Main{
     	// int numbers[] = {13, 7, 6, 12}; 
     	
     	int[] output = getNextGreaterElementOutput(numbers);
-    	long finish = System.nanoTime();
     	printFindNextGreaterElementOutput(numbers, output);
     }
 }
