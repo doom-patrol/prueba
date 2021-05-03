@@ -10,7 +10,6 @@ public class Main{
     static int[] getNextGreaterElementOutput(int numbers[]) {
     	int arrayLength = numbers.length;
     	
-    	// Map<Integer, Integer> output = new LinkedHashMap<Integer, Integer>();
     	int output[] = new int[numbers.length];
     	for (int i = 0;i < arrayLength; i++) {
     		output[i] = -1;
